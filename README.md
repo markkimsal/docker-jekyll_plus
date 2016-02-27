@@ -18,9 +18,10 @@ Add the following JS to your html files:
 Run Jekyll build one time
 -----------------
 To make a one time build and use jekyll without the livereload
+
     run --rm  -v "$PWD:/src" -p 4000:4000 -p 35729:35729 markkimsal/jekyll-plus  jekyll build
 
 
 You can customize the output folder which defaults to /src/\_site/ by binding another volume
 
-run --rm  -v "$PWD:/src" -v "$PWD/../../my\_static\_build/folder/:/src/\_site/" -p 4000:4000 -p 35729:35729 markkimsal/jekyll-plus  jekyll build
+    run --rm  -v "$PWD:/src" -v "$PWD/../../my\_static\_build/folder/:/src/\_site/" -p 4000:4000 -p 35729:35729 markkimsal/jekyll-plus  jekyll build
