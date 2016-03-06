@@ -16,6 +16,7 @@ RUN apt-get install -y ruby2.2 ruby2.2-dev
 
 RUN gem install rdiscount kramdown
 RUN gem install jekyll jekyll-tagging-related_posts guard guard-livereload
+RUN gem install jekyll-feed
 
 
 RUN mkdir /etc/service/guard
