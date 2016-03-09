@@ -56,3 +56,20 @@ You can run a one time build with an alternate config file like this:
       -p 4000:4000 \
       -p 35729:35729 \
       markkimsal/jekyll-plus  jekyll build  --config _config_prod.yml
+
+Run Jekyll build with JEKYLL\_ENV
+-----------------
+You may want to run a production build and set the jekyll.environment flag to production.  This will allow you to check this flag in Liquid syntax which defaults to "development" if you don't specify a setting from command line
+
+    {% if jekyll.environment == "production" %}
+        {% include disqus.html %}
+    {% endif %}
+
+You can run a one time build and specify the jekyll.environment flag with this:
+
+    docker run --rm  -v "$PWD:/src" \
+      -v "$PWD/../../my_static\_build/folder/:/src/_site/" 
+      -p 4000:4000 \
+      -p 35729:35729 \
+	  -e JEKYLL_ENV=production \
+      markkimsal/jekyll-plus  jekyll build
