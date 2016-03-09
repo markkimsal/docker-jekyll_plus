@@ -31,7 +31,7 @@ To make a one time build and use jekyll without the livereload
 You can customize the output folder which defaults to /src/\_site/ by binding another volume
 
     docker run --rm  -v "$PWD:/src" \
-      -v "$PWD/../../my\_static\_build/folder/:/src/\_site/" 
+      -v "$PWD/../../my_static\_build/folder/:/src/_site/" 
       -p 4000:4000 \
       -p 35729:35729 \
       markkimsal/jekyll-plus  jekyll build
@@ -52,7 +52,7 @@ so you can disable things like JS tracking and live reload in your dev environme
 You can run a one time build with an alternate config file like this:
 
     docker run --rm  -v "$PWD:/src" \
-      -v "$PWD/../../my\_static\_build/folder/:/src/\_site/" 
+      -v "$PWD/../../my_static\_build/folder/:/src/_site/" 
       -p 4000:4000 \
       -p 35729:35729 \
       markkimsal/jekyll-plus  jekyll build  --config _config_prod.yml
