@@ -3,6 +3,23 @@ Jekyll plus livereload
 
 The build will run jekyll plus guard with guard-livereload plugins.  Want more guard plugins?  Open an issue and ask.
 
+Install Gems
+----
+
+You can install Gems into your current folder under .bundle/ with the following command
+
+```
+    docker run --rm -v "$PWD:/src" \
+      markkimsal/jekyll-plus bundle install
+```
+The default BUNDLE\_PATH of /src/.bundle can be overridden with
+
+```
+    docker run --rm -v "$PWD:/src" \
+	  -e "BUNDLE_PATH=/some/where/else"
+      markkimsal/jekyll-plus bundle install
+```
+
 
 Run jekyll server with live reload
 -----------
