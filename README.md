@@ -12,6 +12,7 @@ You can install Gems into your current folder under .bundle/ with the following 
     docker run --rm -v "$PWD:/src" \
       markkimsal/jekyll-plus bundle install
 ```
+
 The default BUNDLE\_PATH of /src/.bundle can be overridden with
 
 ```
@@ -53,7 +54,7 @@ You can customize the output folder which defaults to /src/\_site/ by binding an
       -p 35729:35729 \
       markkimsal/jekyll-plus  jekyll build
 
-Run Jekyll build with alternate config
+Build for production with alternate config
 -----------------
 You may want to have a separate config file that contains a flag for your production environment.  Something like:
 
@@ -71,7 +72,7 @@ You can run a one time build with an alternate config file like this:
     docker run --rm  -v "$PWD:/src" \
       markkimsal/jekyll-plus  jekyll build  --config _config_prod.yml
 
-Run Jekyll build with JEKYLL\_ENV
+Build for production with JEKYLL\_ENV
 -----------------
 You may want to run a production build and set the jekyll.environment flag to production.  This will allow you to check this flag in Liquid syntax which defaults to "development" if you don't specify a setting from command line
 
