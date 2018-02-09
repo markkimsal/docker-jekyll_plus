@@ -15,10 +15,10 @@ RUN apt-get install -y make node python-pygments openssl g++
 RUN apt-get install -y ruby2.2 ruby2.2-dev
 
 RUN gem install rdiscount kramdown
+RUN gem install ffi --version '=1.9.18' --platform ruby
 RUN gem install jekyll jekyll-tagging-related_posts guard guard-livereload
 RUN gem install jekyll-feed
 RUN gem install bundler
-RUN gem install ffi --version '=1.9.18' --platform ruby
 
 
 RUN mkdir /etc/service/guard
