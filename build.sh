@@ -1,6 +1,9 @@
 #!/bin/bash
-ID=$(docker build -qt "markkimsal/jekyll-plus:0.4.0" .)
+TAG=$1
+ID=$(docker build -qt "markkimsal/jekyll-plus:latest" .)
 ret=$?
-if [ $ret -eq 0 ];then
-	docker tag $ID markkimsal/jekyll-plus:latest
+if [ "$TAG" != "" ];then
+	if [ $ret -eq 0 ];then
+		docker tag $ID markkimsal/jekyll-plus:$1
+	fi
 fi
