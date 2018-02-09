@@ -18,7 +18,7 @@ RUN gem install rdiscount kramdown
 RUN gem install jekyll jekyll-tagging-related_posts guard guard-livereload
 RUN gem install jekyll-feed
 RUN gem install bundler
-RUN gem inst ffi --platform ruby
+#RUN gem inst ffi --platform ruby
 
 
 RUN mkdir /etc/service/guard
