@@ -10,7 +10,7 @@ You can install Gems into your current folder under .bundle/ with the following 
 
 ```
     docker run --rm -v "$PWD:/src" \
-      markkimsal/jekyll_plus bundle install
+      markkimsal/jekyll-plus bundle install
 ```
 
 The default BUNDLE\_PATH of /src/.bundle can be overridden with
@@ -18,7 +18,7 @@ The default BUNDLE\_PATH of /src/.bundle can be overridden with
 ```
     docker run --rm -v "$PWD:/src" \
 	  -e "BUNDLE_PATH=/some/where/else"
-      markkimsal/jekyll_plus bundle install
+      markkimsal/jekyll-plus bundle install
 ```
 
 
@@ -28,7 +28,7 @@ Run jekyll server with live reload
     docker run --rm -v "$PWD:/src" \
       -p 4000:4000 \
       -p 35729:35729 \
-      markkimsal/jekyll_plus
+      markkimsal/jekyll-plus
 
 This will default to running **jekyll serve -H 0.0.0.0** via the init process of the container.
 
@@ -43,7 +43,7 @@ To make a one time build and use jekyll without the livereload
     docker run --rm  -v "$PWD:/src" \
       -p 4000:4000 \
       -p 35729:35729 \
-       markkimsal/jekyll_plus  jekyll build
+       markkimsal/jekyll-plus  jekyll build
 
 
 You can customize the output folder which defaults to /src/\_site/ by binding another volume
@@ -52,7 +52,7 @@ You can customize the output folder which defaults to /src/\_site/ by binding an
       -v "$PWD/../../my_static_build/folder/:/src/_site/" 
       -p 4000:4000 \
       -p 35729:35729 \
-      markkimsal/jekyll_plus  jekyll build
+      markkimsal/jekyll-plus  jekyll build
 
 Build for production with alternate config
 -----------------
@@ -70,7 +70,7 @@ so you can disable things like JS tracking and live reload in your dev environme
 You can run a one time build with an alternate config file like this:
 
     docker run --rm  -v "$PWD:/src" \
-      markkimsal/jekyll_plus  jekyll build  --config _config_prod.yml
+      markkimsal/jekyll-plus  jekyll build  --config _config_prod.yml
 
 Build for production with JEKYLL\_ENV
 -----------------
@@ -84,4 +84,4 @@ You can run a one time build and specify the jekyll.environment flag with this:
 
     docker run --rm  -v "$PWD:/src" \
 	  -e JEKYLL_ENV=production \
-      markkimsal/jekyll_plus  jekyll build
+      markkimsal/jekyll-plus  jekyll build
