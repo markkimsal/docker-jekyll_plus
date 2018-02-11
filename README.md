@@ -83,5 +83,5 @@ You may want to run a production build and set the jekyll.environment flag to pr
 You can run a one time build and specify the jekyll.environment flag with this:
 
     docker run --rm  -v "$PWD:/src" \
-	  -e JEKYLL_ENV=production \
+	  -e "JEKYLL_ENV=production" \
       markkimsal/jekyll-plus  jekyll build
